@@ -11,13 +11,15 @@
 get
 
 **请求参数** 
-|     参数名    |     类型   |   是否必需    |   说明    |
-|:----------:|:----------:|:-----------:|
-| q     |String   |是  | 搜索内容   |
-| page    |Number |是    | 页数   |
-| per_page     |Number  |是   | 每页条数   |
-| type     |Number  |否   | 搜索类型: Repositories(默认)、 code、commits、... |
-| ...     |  |  |  |
+   参数名    |     类型   |   是否必需    |   说明    
+------------ | -------------  | -------------  | -------------
+ q     |String   |是  | 搜索内容   
+ page    |Number |是    | 页数   
+ per_page     |Number  |是   | 每页条数   
+ type     |Number  |否   | 搜索类型: Repositories(默认)、 code、commits、... 
+ ...     |  |  |  
+
+
 
 **返回结果** 
 ```javascript
