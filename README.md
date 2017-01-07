@@ -1,3 +1,11 @@
+# technology for fun :)
+
+这里只是基于 React-native 写的一些好玩的API 组件库。现在包括以下组件功能：
+
+1、redux数据流
+2、...
+
+
 
 ## 接口文档
 为了更好的模拟功能，调用了github的数据接口,如还需要查找其他接口可以访问 Github 接口文档 [https://developer.github.com/v3/][1]。
@@ -25,7 +33,7 @@ get
 
 
 **返回结果**  
- 
+
 ```javascript
 {
 	total_count: 359724,
@@ -127,6 +135,11 @@ get
 	]
 }
 ```
+
+## 注意
+仿造当前日常用的APP `知乎`、`搜狐新闻`等。随便玩:)
+
+
 
   [1]: https://developer.github.com/v3/
   [2]: https://api.github.com/search/repositories?q=api&page=2&per_page=3
