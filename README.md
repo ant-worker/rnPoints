@@ -1,17 +1,19 @@
 
-### 接口文档
+## 接口文档
 为了更好的模拟功能，调用了github的数据接口,如还需要查找其他接口可以访问 Github 接口文档 [https://developer.github.com/v3/][1]。
 
-#### 搜索接口
+### 搜索接口
 
-**接口URL** 
+**接口URL**  
+
 [https://api.github.com/search/repositories?q=api&page=1&per_page=50][2]
 
-**请求类型** 
+**请求类型**  
+
 get
 
 **请求参数**  
- 
+
    参数名    |     类型   |   是否必需    |   说明    
 ------------ | -------------  | -------------  | -------------
  q     |String   |是  | 搜索内容   
@@ -22,7 +24,8 @@ get
 
 
 
-**返回结果** 
+**返回结果**  
+ 
 ```javascript
 {
 	total_count: 359724,
