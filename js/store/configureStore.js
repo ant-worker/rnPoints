@@ -31,7 +31,7 @@ const store = createStore(
 
 function configureStore(onComplete) {
   // TODO: 建议开始把redux-persist关闭，因为它会对state进行缓存，可能对于一些state对象调试不是很方便
-  persistStore(store, { storage: AsyncStorage }, onComplete);
+  // persistStore(store, { storage: AsyncStorage }, onComplete);
 
   if (isDebuggingInChrome) {
     window.store = store;

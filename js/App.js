@@ -6,35 +6,29 @@ import React, { Component  } from 'react';
 import {
   StyleSheet,
   View,
-  Text,
-  Navigator,
-  StatusBar
+  StatusBar,
 } from 'react-native';
+import { connect } from 'react-redux';
+import networkIndicator from './actions/networkIndicator';
+import AppNavigator from './AppNavigator';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    
+  }
   componentDidMount() {
   }
   render() {
+            // barStyle="light-content"
     return (
-    	<View style={styles.container}>
-	    	<View style={styles.StatusBar}>
-	        <StatusBar
+      <View style={styles.container}>
+          <StatusBar
+            networkActivityIndicatorVisible = {this.props.networkIndicator}
             translucent={true}
-	          networkActivityIndicatorVisible = {false}
-            height={20}
             backgroundColor="blue"
 	         />
-	      </View>
-        <Navigator
-          initialRoute={{statusBarHidden: false}}
-          renderScene={(route, navigator) =>
-            <View>
-              <StatusBar hidden={route.statusBarHidden || false} />
-              <Text>我是APP11</Text>
-            </View>
-           }
-         />
-        
+        <AppNavigator />       
       </View>
     )
   }
@@ -44,11 +38,13 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  StatusBar: {
-  	// backgroundColor: 'blue',
-   //  height: 20,
-  }
 });
 
-module.exports = App;
+const mapStateToProps = state => {
+  return {
+    networkIndicator: state.networkIndicator
+  }
+};
+
+module.exports = connect(mapStateToProps)(App);
 

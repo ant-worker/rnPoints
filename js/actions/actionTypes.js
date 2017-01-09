@@ -3,5 +3,5 @@
  */
 
 module.exports = {
-
+	NETWORK_INDICATOR: 'NETWORK_INDICATOR',
 }

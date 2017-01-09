@@ -10,7 +10,7 @@ import {
 import {
   Provider,
 } from 'react-redux';
-// import configureStore from './store/configureStore';
+import configureStore from './store/configureStore';
 import App from './App';
 
 global.LOG = (...args) => {
@@ -24,7 +24,7 @@ export default class Root extends Component {
   constructor() {
     super();
     this.state = {
-      store: null,
+      store: configureStore(),
     };
   }
   render() {
