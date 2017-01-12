@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "mock": "supervisor Mock/index",
     "test": "jest"
   },
   "dependencies": {
@@ -18,8 +19,11 @@
   "devDependencies": {
     "babel-jest": "18.0.0",
     "babel-preset-react-native": "1.9.1",
+    "express": "^4.14.0",
     "jest": "18.1.0",
-    "react-test-renderer": "15.4.1"
+    "path": "^0.12.7",
+    "react-test-renderer": "15.4.1",
+    "yog-devtools": "^0.1.1"
   },
   "jest": {
     "preset": "react-native"
