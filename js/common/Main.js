@@ -6,6 +6,7 @@ import {
   StatusBar,
   Platform,
 } from 'react-native';
+import LoginOut from '../casual/LoginOut';
 
 export default class Main extends Component {
 	render() {
@@ -14,9 +15,7 @@ export default class Main extends Component {
         style={styles.container}
 			>	
         <Text>我是APP2221</Text>
-        <Text>我是APP222</Text>
-        <Text>我是APP2223</Text>
-        <Text>我是APP2224111</Text>
+        <LoginOut />
       </View>
 		)
 	}
