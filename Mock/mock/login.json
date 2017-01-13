@@ -1,0 +1,12 @@
+{
+    "status": 0,
+    "error": {},
+    "message": "",
+    "data": {
+        "name": "foo",
+        "password": 1,
+        "token": "iamuser foo 's token",
+        "identity": "1"
+    }
+}
+

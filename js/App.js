@@ -9,8 +9,9 @@ import {
   StatusBar,
 } from 'react-native';
 import { connect } from 'react-redux';
-import networkIndicator from './actions/networkIndicator';
+import { networkIndicator } from './actions';
 import AppNavigator from './AppNavigator';
+import { login, logout } from './actions';
 
 class App extends Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class App extends Component {
     
   }
   componentDidMount() {
+    // this.props.dispatch(networkIndicator(true));
   }
   render() {
             // barStyle="light-content"
