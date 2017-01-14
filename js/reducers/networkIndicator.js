@@ -1,7 +1,7 @@
 /**
  * networkIndicator reducer
  */
-import { NETWORK_INDICATOR } from '../actions/actionTypes';
+import { NETWORK_INDICATOR } from '../actions/types';
 
 const networkIndicator = (state = false, action) => {
   switch (action.type) {

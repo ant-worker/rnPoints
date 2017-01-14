@@ -8,7 +8,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import { connect } from 'react-redux';
-import { login, logout, networkIndicator } from '../actions';
+import { loginRequest, logoutRequest, networkIndicator } from '../actions';
 
 class LoginOut extends Component {
 	constructor(props) {
@@ -25,8 +25,12 @@ class LoginOut extends Component {
 				<View style={styles.row} >
 					<Text style={styles.label} >姓名：</Text>
 					<Text style={styles.input} >{ login.name }</Text>
-					<Text style={styles.input} >{ logout.logout }</Text>
+					<Text style={styles.input} >{ !!login.error && '请求失败' }</Text>
 				</View>
+				<TouchableHighlight onPress={this._logout}> 
+					<Text style={styles.button} >退出 { logout.isFetching && '正在请求中'} </Text>
+				</TouchableHighlight>
+				<Text style={styles.input} >{ logout.logout }</Text>
 				<Text style={styles.button} >注册</Text>
 				<View style={styles.border} ></View>
 			</View>
@@ -36,17 +40,17 @@ class LoginOut extends Component {
 		var _this = this;
 		console.log('login');
 		this.props.loginReq({
-			name: 'suibian',
+			name: 'suibianlalla',
 			password: 'suibian password',
 		});
-		
-		// const asyncFn = async () => {
-
-	 //  	await _this.props.dispatch([login(obj), logout(obj)])
-		// 	console.log(_this.props.logout.logout);
-	 //  };
-		
-		// asyncFn();
+	}
+	_logout = () => {
+		var _this = this;
+		console.log('logout');
+		this.props.logoutReq({
+			name: 'suibianlalla',
+			password: 'suibian password',
+		});
 	}
 }
 
@@ -88,38 +92,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch,props) => {
 	return {
 		loginReq: (obj) => {
-			// const reqList = () => {
-		 //    return dispatch(()=>{
-		 //    	dispatch([login(obj), logout(obj)]);
-		 //    }.then(function(){
-		 //    	console.log('over');
-		 //    }));
-		 //    return dispatch(
-		 //    	new Promise((resolve, reject) => {
-			//     	dispatch([login(obj), logout(obj)]);
-				    
-			// 	  }).then(function(){
-			// 			console.log(props.login);
-
-			// 	  })
-			//   );
-		 //  }
-			// const asyncFn = async () => {
-		 //  	await reqList();
-			// 	console.log(props.login);
-		 //  };
-			
-			// asyncFn();
-			return dispatch(
-	    	new Promise((resolve, reject) => {
-		    	dispatch([login(obj), logout(obj)]);
-			    
-			  }).then(function(){
-					console.log('jiesulalalal');
-			  	
-			  })
-		  );
-			// dispatch([login(obj), logout(obj)])
+			dispatch(loginRequest(obj));
+		},
+		logoutReq: (obj) => {
+			dispatch(logoutRequest(obj));
 		},
 	};
 }

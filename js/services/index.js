@@ -1,0 +1,45 @@
+/**
+ * client-server processing
+ */
+
+/**
+ * 
+ */
+function generalReq(obj) {
+  return new Promise( (resolve, reject) => {
+    // fetch(`https://api.github.com/search/repositories?q=api&page=2&per_page=3`).then(
+    fetch(obj.url).then(
+      response => {
+        response.json().then((res) => {
+          if (res.status === 0) {
+            resolve(res.data);
+          }else {
+            reject({
+              status: res.status,
+              error: res.error,
+              message: res.message
+            });
+          }
+        });
+      },
+      error => {
+        reject({
+          error: error
+        });
+      }
+    )
+  })
+}
+
+export const api = {
+  login(params) {
+    return generalReq({
+      url: `http://172.16.1.52:2000/api/login`,
+    });
+  },
+  logout(params) {
+    return generalReq({
+      url: `http://172.16.1.52:2000/api/logout`,
+    });
+  },
+}

@@ -1,7 +1,7 @@
 /**
  * 账户 reducer
  */
-
+import { combineReducers } from 'redux'
 import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
@@ -9,7 +9,7 @@ import {
   LOGOUT_REQUEST,
   LOGOUT_SUCCESS,
   LOGOUT_FAILURE,
-} from '../actions/actionTypes';
+} from '../actions/types';
 
 
 const initialLoginState = {
@@ -34,12 +34,14 @@ const initialLogoutState = {
 };
 
 // 此处需要优化
-const loginFn = (state, action) => {
+const login = (state=initialLoginState, action) => {
   switch (action.type) {
     case LOGIN_REQUEST:
       return {
         ...state,
         isFetching: true,
+        name: action.loginInfo.name,
+        password: action.loginInfo.password
       }
     case LOGIN_SUCCESS:
       const data = action.data;
@@ -51,16 +53,16 @@ const loginFn = (state, action) => {
         password: data.password,
         identity: data.identity,
         token: data.token,
-
       }
     case LOGIN_FAILURE:
+      const error = action.error;
       return {
         ...state,
         isFetching: false,
         isLogin: false,
-        error: action.error,
-        errorType: action.errorType,
-        message: action.message,
+        status: error.status || null,
+        error: error.error,
+        message: error.message  || null,
       }
     default:
       return state
@@ -68,7 +70,7 @@ const loginFn = (state, action) => {
 
 }
 // 此处需要优化
-const logoutFn = (state, action) => {
+const logout = (state=initialLogoutState, action) => {
   switch (action.type) {
     case LOGIN_REQUEST:
       return {
@@ -99,28 +101,36 @@ const logoutFn = (state, action) => {
 
 }
 
+export default combineReducers({
+  login,
+  logout,
+})
 
-const account = (state = {login: initialLoginState, logout: initialLogoutState}, action) => {
-  switch (action.type) {
-    case LOGIN_REQUEST:
-    case LOGIN_SUCCESS:
-    case LOGIN_FAILURE:
-      return {
-        ...state,
-        login: loginFn(state.login, action)
-      }
-    case LOGOUT_REQUEST:
-    case LOGOUT_SUCCESS:
-    case LOGOUT_FAILURE:
-      return {
-        ...state,
-        logout: logoutFn(state.logout, action)
-      }
-    default:
-      return state
-  }
+// export default (state = {login: initialLoginState, logout: initialLogoutState}, action) => {
+//   switch (action.type) {
+//     case LOGIN_REQUEST:
+//     case LOGIN_SUCCESS:
+//     case LOGIN_FAILURE:
+//       return {
+//         ...state,
+//         login: loginFn(state.login, action)
+//       }
+//     case LOGOUT_REQUEST:
+//     case LOGOUT_SUCCESS:
+//     case LOGOUT_FAILURE:
+//       return {
+//         ...state,
+//         logout: logoutFn(state.logout, action)
+//       }
+//     default:
+//       return state
+//   }
+// }
+
+export function getLoginInfo(state) {
+  return state.account.login;
 }
 
-module.exports = {
-	account: account
-}
+// module.exports = {
+// 	account: account
+// }
