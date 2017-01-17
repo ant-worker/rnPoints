@@ -30,6 +30,31 @@ function generalReq(obj) {
     )
   })
 }
+function testGeneralReq(obj) {
+  return new Promise( (resolve, reject) => {
+    // fetch(`https://api.github.com/search/repositories?q=api&page=2&per_page=3`).then(
+    fetch(obj.url).then(
+      response => {
+        response.json().then((res) => {
+          if (res.status != 1) {
+            resolve(res);
+          }else {
+            reject({
+              status: res.status,
+              error: res.error,
+              message: res.message
+            });
+          }
+        });
+      },
+      error => {
+        reject({
+          error: error
+        });
+      }
+    )
+  })
+}
 
 export const api = {
   login(params) {
@@ -40,6 +65,11 @@ export const api = {
   logout(params) {
     return generalReq({
       url: `http://172.16.1.52:2000/api/logout`,
+    });
+  },
+  getRacingList(params) {
+    return testGeneralReq({
+      url: `http://news-at.zhihu.com/api/4/theme/${params.id}`,
     });
   },
 }

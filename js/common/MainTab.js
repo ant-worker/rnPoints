@@ -16,9 +16,9 @@ export default class MainTab extends Component{
 			<ScrollableTabView
 				locked={false}
 			>
-		      <RacingList tabLabel='报名中' id='报名中数据' />
-		      <RacingList tabLabel='进行中' id='进行中数据' />
-		      <RacingList tabLabel='已结束' id='已结束数据' />
+		      <RacingList tabLabel='报名中' id='4' />
+		      <RacingList tabLabel='进行中' id='5' />
+		      <RacingList tabLabel='已结束' id='6' />
 		    </ScrollableTabView>
 		)
 	}

@@ -37,6 +37,7 @@ const initialLogoutState = {
 const login = (state=initialLoginState, action) => {
   switch (action.type) {
     case LOGIN_REQUEST:
+
       return {
         ...state,
         isFetching: true,
@@ -128,6 +129,7 @@ export default combineReducers({
 // }
 
 export function getLoginInfo(state) {
+ console.log(state);
   return state.account.login;
 }
 
