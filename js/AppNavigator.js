@@ -9,7 +9,7 @@ export default class AppNavigator extends Component {
 	render() {
 		return (
 			<Navigator
-        style={styles.container}
+        
         configureScene={(route) => {
         	return Navigator.SceneConfigs.PushFromRight;
         }}
@@ -29,5 +29,7 @@ export default class AppNavigator extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'red',
+    marginTop: 30
   },
 });

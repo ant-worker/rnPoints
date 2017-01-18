@@ -11,14 +11,14 @@ import LoginOut from '../casual/LoginOut';
 import Racing from '../page/Racing';
 export default class Main extends Component {
   _pressButton() {
-      const { navigator } = this.props;
-      console.log(navigator);
-      if(navigator) {
-          navigator.push({
-              name: 'Racing',
-              component: Racing,
-          })
-      }
+    const { navigator } = this.props;
+    console.log(navigator);
+    if(navigator) {
+      navigator.push({
+        name: 'Racing',
+        component: Racing,
+      })
+    }
   }
 	render() {
 		return (
@@ -26,17 +26,10 @@ export default class Main extends Component {
         style={styles.container}
 			>	
         <TouchableOpacity onPress={this._pressButton.bind(this)}>
-            <Text>
-            Tab组件
-
-            </Text>
-            <Text>
-            
-            
-            </Text>
+          <Text> Tab组件 Tab组件 Tab组件 </Text> 
         </TouchableOpacity>
 
-        <Text>我是APP2221</Text>
+        <Text>fdsfds我是APP2221</Text>
 
         <LoginOut />
         
@@ -48,10 +41,12 @@ export default class Main extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: 'red',
     ...Platform.select({
       ios: {
          paddingTop: 20,
+      },
+      android: {
+        paddingTop: Platform.Version <= 19 ? 0 : StatusBar.currentHeight,
       },
     }),
   },

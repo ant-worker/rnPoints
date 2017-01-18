@@ -25,11 +25,13 @@ class App extends Component {
             // barStyle="light-content"
     return (
       <View style={styles.container}>
-          <StatusBar
-            networkActivityIndicatorVisible = {this.props.networkIndicator}
-            translucent={true}
-            backgroundColor="blue"
-	         />
+        <View style={{flex: 0}}>
+            <StatusBar
+              networkActivityIndicatorVisible = {this.props.networkIndicator}
+              translucent={true}
+              backgroundColor="blue"
+  	         />
+        </View>
         <AppNavigator />       
       </View>
     )
