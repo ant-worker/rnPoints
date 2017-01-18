@@ -13,8 +13,9 @@ export default class RacingList extends Component{
 	constructor(props) {
     	super(props);
     	// console.log('constructor');
-    	this.props.getRacingList(this.props.id)
-    	
+	}
+	componentWillMount(props) {
+		this.props.getRacingList(this.props.id)
 	}
 	// getDefaultProps(){
 	// 	console.log(12211221);
@@ -22,7 +23,7 @@ export default class RacingList extends Component{
 	// }
 	render(){
 		console.log('render')
-		
+
 		return(
 			<View>
 				<Text>{this.props.reduxData.name}</Text>
@@ -47,7 +48,7 @@ function mapDispatchToProps(dispatch) {
   return {
   	getRacingList:(id) => {
   		console.log('dispatch',id,'mapDispatchToProps');
-  		dispatch(getRacingListRequest(id))	
+  		dispatch(getRacingListRequest(id))
   	}
   };
 }

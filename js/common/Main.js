@@ -8,8 +8,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import LoginOut from '../casual/LoginOut';
-// import Racing from '../page/Racing';
-import test from '../tabs/news/test';
+import Racing from '../page/Racing';
+// import test from '../tabs/news/test';
 
 // console.log(test());
 export default class Main extends Component {
@@ -20,10 +20,10 @@ export default class Main extends Component {
     const { navigator } = this.props;
     console.log(navigator);
     if (navigator) {
-      // navigator.push({
-      //   name: 'Racing',
-      //   component: Racing,
-      // });
+			navigator.push({
+        name: 'Racing',
+        component: Racing,
+      });
     }
   }
   render() {
@@ -31,7 +31,7 @@ export default class Main extends Component {
       <View
         style={styles.container}
       >
-        <TouchableOpacity onPress={this._pressButton()}>
+        <TouchableOpacity onPress={this._pressButton.bind(this)}>
           <Text> Tab组件 Tab组件 Tab组件 </Text>
         </TouchableOpacity>
 

@@ -1,1 +1,3 @@
-test.js
+function (){
+ var a = 2;
+}

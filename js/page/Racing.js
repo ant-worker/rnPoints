@@ -1,6 +1,7 @@
 import React from 'react';
 import {
     View,
+    StyleSheet,
     Navigator,
     TouchableOpacity,
     Text
@@ -22,12 +23,18 @@ export default class Racing extends React.Component {
 
   render() {
     return (
-      <View style={{height:500}}>
-          <MainTab></MainTab>
+      <View style={styles.container}>
+
           <TouchableOpacity onPress={this._pressButton.bind(this)}>
-              <Text>点我跳回去</Text>
+              <Text>返回</Text>
           </TouchableOpacity>
+          <MainTab></MainTab>
       </View>
     );
   }
 }
+const styles = StyleSheet.create({
+	container:{
+		flex: 1
+	}
+})
