@@ -15,18 +15,29 @@
     "no-alert": 0,
 
     "indent": [2, 2, {"SwitchCase": 1}],
+    
     "react-native/no-unused-styles": 2,
     "react-native/split-platform-components": 2,
     "react-native/no-inline-styles": 2,
     "react-native/no-color-literals": 2,
+
+    // eslint-plugin-react setting
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-no-bind": [1, {
+		  "ignoreRefs": true,
+		  "allowArrowFunctions": true,
+		  "allowBind": true
+		}]
   },
   "plugins": [
 	  "react",
     "react-native",
     "import"
   ],
-  "ecmaFeatures": {
-    "jsx": true
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "settings": {
     "import/parser": "babel-eslint",
