@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import {racingList} from '../actions'
+import {getRacingListRequest} from '../actions'
 
 export default class RacingList extends Component{
 	constructor(props) {
@@ -24,28 +25,29 @@ export default class RacingList extends Component{
 		
 		return(
 			<View>
-				<Text>{this.props.reduxData}</Text>
+				<Text>{this.props.reduxData.name}</Text>
 			</View>
 		)
 	}
 }
 const mapStateToProps = (state,props) => {
-	console.log(state,props,'mapStateToProps');
 	const { racingList } = state
-	if(racingList[props.id] === undefined){
+	console.log(racingList,state,props,'mapStateToProps');
+	if(racingList.getRacingList[props.id] === undefined||racingList.getRacingList[props.id].data === null){
 		return {
 			reduxData:''
 		}
 	}
+	// console.log(racingList.getRacingList[props.id]);
 	return {
-		reduxData:racingList[props.id].items
+		reduxData:racingList.getRacingList[props.id].data
 	}
 }
 function mapDispatchToProps(dispatch) {
   return {
   	getRacingList:(id) => {
   		console.log('dispatch',id,'mapDispatchToProps');
-  		dispatch(racingList(id))	
+  		dispatch(getRacingListRequest(id))	
   	}
   };
 }
