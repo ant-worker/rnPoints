@@ -1,4 +1,5 @@
 {
+  "root": true,
   "extends": "airbnb",
   "parser": "babel-eslint",
   "env": {
@@ -9,13 +10,13 @@
   "rules": {
     // Disable for __DEV__, __SERVER__ usage.
     "no-undef" : 0,
-
     // Disable for console/alert
     "no-console": 0,
     "no-alert": 0,
+    "no-tabs": 0,
+     "indent": ["error", "tab"],
 
-    "indent": [2, 2, {"SwitchCase": 1}],
-    
+    // eslint-plugin-react-native setting
     "react-native/no-unused-styles": 2,
     "react-native/split-platform-components": 2,
     "react-native/no-inline-styles": 2,
@@ -30,7 +31,7 @@
 		}]
   },
   "plugins": [
-	  "react",
+    "react",
     "react-native",
     "import"
   ],

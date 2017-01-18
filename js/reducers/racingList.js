@@ -1,7 +1,7 @@
 
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
 import {
-	RACING_LIST_REQUEST,
+  RACING_LIST_REQUEST,
 	RACING_LIST_SUCCESS,
 	RACING_LIST_FAILURE
 } from '../actions/types';

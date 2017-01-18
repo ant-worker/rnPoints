@@ -15,7 +15,7 @@ import {
 function loginRequest(obj) {
   return {
     type: LOGIN_REQUEST,
-    loginInfo: obj
+    loginInfo: obj,
   }
 }
 
