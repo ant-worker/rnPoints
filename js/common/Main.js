@@ -32,7 +32,7 @@ export default class Main extends Component {
 
         <Text>fdsfds我是APP2221</Text>
 
-        <LoginOut />    
+        <LoginOut />
       </View>
     );
   }
