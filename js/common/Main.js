@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet,
-  Text,
-  View,
-  StatusBar,
-  Platform,
-  TouchableOpacity,
+	StyleSheet,
+	Text,
+	View,
+	StatusBar,
+	Platform,
+	TouchableOpacity,
 } from 'react-native';
 import LoginOut from '../casual/LoginOut';
 import Racing from '../page/Racing';
@@ -35,24 +35,24 @@ export default class Main extends Component {
           <Text> Tab组件 Tab组件 Tab组件 </Text>
         </TouchableOpacity>
 
-        <Text>fdsfds我是APP2221</Text>
+				<Text>fdsfds我是APP2221</Text>
 
-        <LoginOut />
-      </View>
-    );
-  }
+				<LoginOut />
+			</View>
+		);
+	}
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    ...Platform.select({
-      ios: {
-        paddingTop: 20,
-      },
-      android: {
-        paddingTop: Platform.Version <= 19 ? 0 : StatusBar.currentHeight,
-      },
-    }),
-  },
+	container: {
+		flex: 1,
+		...Platform.select({
+			ios: {
+				paddingTop: 20,
+			},
+			android: {
+				paddingTop: Platform.Version <= 19 ? 0 : StatusBar.currentHeight,
+			},
+		}),
+	},
 });

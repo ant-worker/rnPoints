@@ -18,7 +18,7 @@ export default class MainTab extends Component{
 			<ScrollableTabView
 				locked={false}
 				tabBarPosition="bottom"
-				 style={styles.container}
+				style={styles.container}
 			>
 					<RacingTab tabLabel = '新闻' />
 					<View tabLabel = '我的'>

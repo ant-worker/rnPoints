@@ -1,4 +1,5 @@
 {
+  "root": true,
   "extends": "airbnb",
   "parser": "babel-eslint",
   "env": {
@@ -9,13 +10,19 @@
   "rules": {
     // Disable for __DEV__, __SERVER__ usage.
     "no-undef" : 0,
-
     // Disable for console/alert
     "no-console": 0,
     "no-alert": 0,
+<<<<<<< HEAD
 
     "indent": [2, 2, {"SwitchCase": 1}],
 
+=======
+    "no-tabs": 0,
+    "indent": ["error", "tab"],
+    "linebreak-style": ["error", "unix"],
+    // eslint-plugin-react-native setting
+>>>>>>> 1b361273c006a75c0f5f192364d54b95bf6aff2c
     "react-native/no-unused-styles": 2,
     "react-native/split-platform-components": 2,
     "react-native/no-inline-styles": 2,
@@ -27,10 +34,12 @@
 		  "ignoreRefs": true,
 		  "allowArrowFunctions": true,
 		  "allowBind": true
-		}]
+		}],
+		"react/jsx-indent": [1, 'tab'],
+		"react/jsx-indent-props": [1, 'tab']
   },
   "plugins": [
-	  "react",
+    "react",
     "react-native",
     "import"
   ],

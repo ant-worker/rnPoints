@@ -10,5 +10,5 @@ import { default as account } from './account';
 module.exports = combineReducers({
 	networkIndicator,
 	account,
-	racingList
+	racingList,
 });
