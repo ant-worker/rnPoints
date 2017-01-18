@@ -7,8 +7,7 @@
 
 ## eslint sublime配置
 1、sublime 安装插件 SublimeLinter、SublimeLinter-contrib-eslint  
-2、全局安装 eslint `npm i eslint -g`  
-3、安装相关配置包 `npm i ` 
+2、安装相关配置包 `npm i ` 
 
 
 ## 接口文档

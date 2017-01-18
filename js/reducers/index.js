@@ -4,10 +4,9 @@
 
 import { combineReducers } from 'redux';
 import { networkIndicator } from './networkIndicator';
-import { default as racingList} from './racingList';
+import { default as racingList } from './racingList';
+import { default as account } from './account';
 
-import { default as account }  from './account';
-console.log(account,racingList)
 module.exports = combineReducers({
 	networkIndicator,
 	account,

@@ -1,13 +1,13 @@
 
 import React, { Component } from 'react';
 import {
-    View,
-    Navigator,
-    TouchableOpacity,
-    Text
+  View,
+  Navigator,
+  TouchableOpacity,
+  Text
 } from 'react-native';
 
-import ScrollableTabView,{DefaultTabBar} from 'react-native-scrollable-tab-view';
+import ScrollableTabView,{ DefaultTabBar } from 'react-native-scrollable-tab-view';
 import RacingList from './RacingList'
 
 export default class MainTab extends Component{
