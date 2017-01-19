@@ -11,19 +11,22 @@ import {
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
 // import test from '../tabs/news/test'
 import RacingTab from '../tabs/news/RacingTab';
-
+// import Center from './Center'
 export default class MainTab extends Component{
 	render (){
 		return(
 			<ScrollableTabView
-				locked={false}
+				locked={true}
 				tabBarPosition="bottom"
 				style={styles.container}
 			>
+
 					<RacingTab tabLabel = '新闻' />
 					<View tabLabel = '我的'>
             <Text >我的</Text>
 					</View>
+
+
 				</ScrollableTabView>
 		);
 	}

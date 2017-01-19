@@ -13,16 +13,11 @@
     // Disable for console/alert
     "no-console": 0,
     "no-alert": 0,
-<<<<<<< HEAD
-
-    "indent": [2, 2, {"SwitchCase": 1}],
-
-=======
+    //"indent": [2, 2, {"SwitchCase": 1}],
     "no-tabs": 0,
-    "indent": ["error", "tab"],
+    //"indent": ["error", "tab"],
     "linebreak-style": ["error", "unix"],
     // eslint-plugin-react-native setting
->>>>>>> 1b361273c006a75c0f5f192364d54b95bf6aff2c
     "react-native/no-unused-styles": 2,
     "react-native/split-platform-components": 2,
     "react-native/no-inline-styles": 2,

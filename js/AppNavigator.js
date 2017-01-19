@@ -9,7 +9,7 @@ export default class AppNavigator extends Component {
 	render() {
 		return (
 			<Navigator
-        
+
         configureScene={(route) => {
         	return Navigator.SceneConfigs.PushFromRight;
         }}
