@@ -8,8 +8,10 @@ import {
 	TouchableOpacity,
 } from 'react-native';
 import LoginOut from '../casual/LoginOut';
-import FormTest from '../casual/FormTest';
 import Racing from '../page/Racing';
+import FormTest from '../casual/FormTest';
+import Register from '../casual/Register';
+import Login from '../casual/Login';
 
 
 // console.log(test());
@@ -39,7 +41,9 @@ export default class Main extends Component {
 				<Text>fdsfds我是APP2221</Text>
 
 				{/* <LoginOut /> */}
-				<FormTest/>
+				{/* <FormTest/> */}
+				{/* <Register/> */}
+				<Login/>
 			</View>
 		);
 	}
