@@ -6,10 +6,9 @@ import {
 import Main from './common/Main';
 
 export default class AppNavigator extends Component {
-	render() {
+	render    () {
 		return (
 			<Navigator
-
         configureScene={(route) => {
         	return Navigator.SceneConfigs.PushFromRight;
         }}
