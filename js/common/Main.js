@@ -12,6 +12,7 @@ import Racing from '../page/Racing';
 import FormTest from '../casual/FormTest';
 import Register from '../casual/Register';
 import Login from '../casual/Login';
+import Apply from '../casual/Apply';
 
 
 // console.log(test());
@@ -43,7 +44,8 @@ export default class Main extends Component {
 				{/* <LoginOut /> */}
 				{/* <FormTest/> */}
 				{/* <Register/> */}
-				<Login/>
+				<Login />
+				<Apply />
 			</View>
 		);
 	}

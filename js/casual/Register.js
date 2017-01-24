@@ -11,7 +11,7 @@ import { api } from '../services';
 
 class Register extends Component {
 
-	constructor(props){
+	constructor(props) {
 		super(props);
 		this.state = {
 			seccode: null,
@@ -111,7 +111,7 @@ class Register extends Component {
 								message: '验证码有误',
 							}]}
 							placeholder="请输入验证码"
-							style={{ flex: 1 }}
+							viewStyle={{ flex: 1 }}
 
 						/>
 						<TouchableOpacity onPress={this.getSeccode}>

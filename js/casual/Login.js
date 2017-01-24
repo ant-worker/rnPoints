@@ -21,7 +21,6 @@ class Login extends Component {
 	render() {
 		// submitting
 		const { handleSubmit, passwordConfirmValide, error } = this.props;
-
 		return (
 			<View style={styles.container}>
 				<Input name="uname"

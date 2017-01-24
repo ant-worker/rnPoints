@@ -24,9 +24,12 @@ const logger = createLogger({
   collapsed: true,
   duration: true,
 });
-const sagaMiddleware = createSagaMiddleware({sagaMonitor})
+const sagaMiddleware = createSagaMiddleware({ sagaMonitor });
 
-const enhancer = compose(
+// For: debugger redux
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const enhancer = composeEnhancers(
   // autoRehydrate(),
   applyMiddleware(sagaMiddleware, thunk, promise, array, request, logger),
 )

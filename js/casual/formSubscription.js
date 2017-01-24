@@ -23,6 +23,7 @@ const formSubscription = formKey => WrappedComponent => {
 			this.setState({
 				error: null,
 			});
+
 			// console.log(formValidate)
 			if (!!active){
 				if (fields && fields[active]){
@@ -40,6 +41,7 @@ const formSubscription = formKey => WrappedComponent => {
 					break;
 				}
 			}
+
 			if (!this.state.error && !!this.state.backendErrors && JSON.stringify(this.state.backendErrors) !== '{}') {
 				let backendErrors = this.state.backendErrors;
 				for (let k in backendErrors) {
