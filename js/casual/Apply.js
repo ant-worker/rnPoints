@@ -5,6 +5,7 @@ import {
 	TouchableOpacity,
 	View,
 	ScrollView,
+	KeyboardAvoidingView,
 } from 'react-native';
 import Input from './Input';
 import formSubscription from './formSubscription';
@@ -17,37 +18,81 @@ class Apply extends Component {
 			seccode: null,
 		};
 	}
-	submit = values => {
-		console.log('submitting form', values)
+	submit = (values) => {
+		console.log('submitting form', values);
 	}
 	render() {
 		const { handleSubmit, error } = this.props;
 		return (
 			<ScrollView style={styles.container}>
-				<Input name="phone"
-					type="inline"
-					validations={[
-					 {
-							validator: 'isMobile',
-							message: '请输入格式正确的手机号',
-						},
-					]}
-					placeholder="申请人手机号码" />
-				<Input name="address"
-					type="inline"
-					placeholder="企业运营地址"
-					multiline
-					inputStyle={{ lineHeight: 14, fontSize: 12 }} />
-				<Input name="info"
-					type="textarea"
-					placeholder="限200字以内"
-					multiline
-					maxLength={200}
-					inputStyle={{ height: 260 }} />
-				<TouchableOpacity onPress={handleSubmit(this.submit)}>
-				<Text style={styles.button}>确认信息并提交</Text>
-				</TouchableOpacity>
-				{!!error && <Text >{error}</Text>}
+				<KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
+					<Input
+						name="phone"
+						type="inline"
+						validations={[
+							{
+								validator: 'isMobile',
+								message: '请输入格式正确的手机号',
+							},
+						]}
+						placeholder="申请人手机号码"
+					/>
+					<Input
+						name="address"
+						type="inline"
+						placeholder="企业运营地址"
+						multiline
+						inputStyle={{ lineHeight: 14, fontSize: 12 }}
+					/>
+					<Input
+						name="address"
+						type="inline"
+						placeholder="企业运营地址"
+						multiline
+						inputStyle={{ lineHeight: 14, fontSize: 12 }}
+					/>
+					<Input
+						name="address"
+						type="inline"
+						placeholder="企业运营地址"
+						multiline
+						inputStyle={{ lineHeight: 14, fontSize: 12 }}
+					/>
+					<Input
+						name="address"
+						type="inline"
+						placeholder="企业运营地址"
+						multiline
+						inputStyle={{ lineHeight: 14, fontSize: 12 }}
+					/>
+					<Input
+						name="address"
+						type="inline"
+						placeholder="企业运营地址"
+						multiline
+						inputStyle={{ lineHeight: 14, fontSize: 12 }}
+					/>
+					<Input
+						name="info"
+						type="textarea"
+						placeholder="限200字以内"
+						multiline
+						maxLength={200}
+						inputStyle={{ height: 260 }}
+					/>
+					<Input
+						name="info1"
+						type="textarea"
+						placeholder="限200字以内"
+						multiline
+						maxLength={200}
+						inputStyle={{ height: 260 }}
+					/>
+					<TouchableOpacity onPress={handleSubmit(this.submit)}>
+						<Text style={styles.button}>确认信息并提交</Text>
+					</TouchableOpacity>
+					{!!error && <Text >{error}</Text>}
+				</KeyboardAvoidingView>
 			</ScrollView>
 		);
 	}
@@ -55,7 +100,7 @@ class Apply extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
+		// flex: 1,
 		padding: 20,
 	},
 	button: {

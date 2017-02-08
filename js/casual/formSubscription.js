@@ -108,7 +108,6 @@ const formSubscription = formKey => WrappedComponent => {
 			};
 		},
 	)(formCommon);
-
 	return reduxForm({
 		form: formKey,
 	})(connectForm);

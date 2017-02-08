@@ -3,6 +3,7 @@ import {
 	StyleSheet,
 	Text,
 	View,
+	ScrollView,
 	StatusBar,
 	Platform,
 	TouchableOpacity,
@@ -13,6 +14,9 @@ import FormTest from '../casual/FormTest';
 import Register from '../casual/Register';
 import Login from '../casual/Login';
 import Apply from '../casual/Apply';
+import CamerarollTest from '../casual/CamerarollTest';
+import TestKeyboardAvoidingView from '../casual/TestKeyboardAvoidingView';
+import CameraTest from '../casual/CameraTest';
 
 
 // console.log(test());
@@ -31,8 +35,10 @@ export default class Main extends Component {
     }
   }
   render() {
+    const { navigator } = this.props;
+
     return (
-      <View
+      <ScrollView
         style={styles.container}
       >
         <TouchableOpacity onPress={this._pressButton.bind(this)}>
@@ -43,10 +49,14 @@ export default class Main extends Component {
 
 				{/* <LoginOut /> */}
 				{/* <FormTest/> */}
-				{/* <Register/> */}
-				<Login />
+				{/* <Register/> <Login />
 				<Apply />
-			</View>
+				<CamerarollTest />
+				<CameraTest navigator={navigator} />*/}
+
+
+				<Apply />
+			</ScrollView>
 		);
 	}
 }

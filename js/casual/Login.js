@@ -19,7 +19,9 @@ class Login extends Component {
 		console.log('submitting form', values)
 	}
 	render() {
+		// onSubmitEditing={() => this.focusNextField('2')}
 		// submitting
+		// onSubmitEditing={() => this.focusNextField('2')}
 		const { handleSubmit, passwordConfirmValide, error } = this.props;
 		return (
 			<View style={styles.container}>
@@ -33,7 +35,10 @@ class Login extends Component {
 						arguments: [6, 16],
 						message: '用户名由 {ARGS[0]} 到 {ARGS[1]} 位英文和数字组成',
 					}]}
-					placeholder="请输入用户名/手机号码" />
+					placeholder="请输入用户名/手机号码"
+					keyboardType="numeric"
+					returnKeyType="next"
+					 />
 				<Input name="password"
 					validations={[
 					{
@@ -46,7 +51,10 @@ class Login extends Component {
 					}]}
 					placeholder="请输入密码"
 					password
-					secureTextEntry />
+					secureTextEntry
+					enablesReturnKeyAutomatically={true}  //未输入时键盘的确定按钮不能点
+					returnKeyType="done"
+					 />
 				<TouchableOpacity onPress={handleSubmit(this.submit)}>
 					<Text style={styles.button}>登录</Text>
 				</TouchableOpacity>
@@ -60,7 +68,7 @@ class Login extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
+		// flex: 1,
 		padding: 20,
 	},
 	button: {

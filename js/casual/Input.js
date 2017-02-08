@@ -36,11 +36,14 @@ class Input extends Component {
 					multiline={restProps.multiline}
 				/>
 			</View>
+
 		);
 	}
 	renderTextarea = () => {
 		const { input: { onChange,  ...restInput }, meta: { touched, error, warning, active }, ...restProps } = this.props;
 		return (
+
+
 			<View style={[styles.inputWrap, restProps.viewStyle]} >
 				<TextInput
 					ref={(node) => { this.textInput = node; }}
@@ -55,7 +58,6 @@ class Input extends Component {
 					multiline={restProps.multiline}
 				/>
 				<Text style={[styles.text, styles.textareaLabel]}>{this.state.textLen}/{restProps.maxLength}</Text>
-
 			</View>
 		);
 	}
@@ -97,12 +99,14 @@ class Input extends Component {
 
 const styles = StyleSheet.create({
 	inputWrap: {
+		flex: 1,
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		borderColor: '#333',
 		borderWidth: 1,
 		padding: 6,
 		marginTop: 10,
+		backgroundColor: '#fff',
 
 	},
 	close: {

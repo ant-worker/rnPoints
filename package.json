@@ -6,12 +6,14 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "mock": "supervisor Mock/index",
     "test": "jest",
-		"postinstall": "rndebugger-open"
+    "postinstall": "rndebugger-open"
   },
   "dependencies": {
     "react": "15.4.1",
     "react-native": "0.40.0",
+    "react-native-camera": "git+https://github.com/lwansbrough/react-native-camera.git",
     "react-native-gifted-form": "0.0.13",
+    "react-native-image-picker": "^0.25.1",
     "react-native-scrollable-tab-view": "^0.7.0",
     "react-redux": "^5.0.1",
     "redux": "^3.6.0",
